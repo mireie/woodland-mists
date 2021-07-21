@@ -16,7 +16,7 @@ class Artist
   end
 
   def save
-    @@artists[self.id] = artist.new(self.name, self.genre, self.stage, self.showtime)
+    @@artists[self.id] = Artist.new(self.id, self.name, self.genre, self.stage, self.showtime)
   end
 
   def self.clear
