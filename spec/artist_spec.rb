@@ -38,4 +38,12 @@ describe ("#artist") do
       expect(Artist.find(artist1.id)).to(eq(artist1))
     end
   end
+  describe('#update') do
+    it("updates an artist by id") do
+      artist1 = Artist.new(nil, "Manilow and the Berries", "Wizard Funktronic", nil, "6 AM")
+      artist1.save()
+      artist1.update("Frank and the Furters", "Polish Sausage Rock", nil, "6:01 AM")
+      expect(artist1.name).to(eq("Frank and the Furters"))
+    end
+  end
 end
