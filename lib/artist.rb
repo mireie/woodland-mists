@@ -39,6 +39,16 @@ class Artist
     @showtime = showtime
   end
 
+  def self.find_stage(s_name)
+    artists = []
+    @@artists.values.each do |artist|
+      if artist.stage == s_name
+        artists.push(artist)
+      end
+    end
+    artists
+  end
+
   def delete
     @@artists.delete(self.id)
   end

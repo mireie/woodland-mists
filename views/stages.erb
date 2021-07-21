@@ -1,0 +1,14 @@
+<h1 class="display-1">Welcome to the Woodland Mists Festival</h1>
+
+<p>Bring your flannel, slam some cold snacks, and don your beanies. The fleet foxes look alike contest starts at 2.</p>
+
+<% if @stages.any? %>
+  <ul>
+    <% @stages.each do |stage| %>
+      <li><a href="./stage/<%= stage.id %>"> <%= stage.name %></a></li>
+    <% end %> 
+  </ul>
+<% else %>
+  <p>No stages yet, the lookalike contest will happen somewhere scenic.</p>
+<% end %>
+  <button id="stage-add" type ="button btn-lg" class="btn btn-primary"><a href="/stage_add">Add a stage!</a></button>

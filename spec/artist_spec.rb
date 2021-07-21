@@ -54,4 +54,15 @@ describe ("#artist") do
       expect(Artist.all).to(eq([artist2]))
     end
   end
+
+  describe(".find_stage") do
+    it("tells you who is on a stage") do
+      stage1 = Stage.new(nil, "Waterfall Arena", "Near the desert", 500)
+      artist = Artist.new(nil, "Manilow and the Berries", "Wizard Funktronic", stage1.name, "6 AM")
+      artist.save()
+      artist2 = Artist.new(nil, "Frank and the Furters", "Sausage Rock", "Bobby's House", "6:01 AM")
+      artist2.save()
+      expect(Artist.find_stage(stage1.name)).to(eq([artist]))
+    end
+  end
 end

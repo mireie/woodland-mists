@@ -1,7 +1,9 @@
+
 class Stage
   attr_reader :id, :name, :location, :capacity
   @@stages = {}
   @@stage_id = 0
+  @@artists = {}
 
   def initialize(id, name, location, capacity)
     @id = id || @@stage_id += 1
@@ -9,7 +11,7 @@ class Stage
     @location = location
     @capacity = capacity
   end
-  
+
   def self.all
     @@stages.values()
   end
@@ -17,7 +19,7 @@ class Stage
   def save
     @@stages[self.id] = Stage.new(self.id, self.name, self.location, self.capacity)
   end
-  
+
   def self.clear
     @@stages = {}
     @@stage_id = 0
@@ -35,12 +37,10 @@ class Stage
     @name = name
     @location = location
     @capacity = capacity
-
   end
-  
+
   def delete
     @@stages.delete(self.id)
   end
-
 
 end

@@ -1,0 +1,13 @@
+<h4>Add your band! Play at <%= @stage.name %></h4>
+
+<form method="post" action="/stage/<%= @stage.id %>">
+  <div class="form-group">
+    <label for="name">Whats your band name</label>
+    <input name="name" type="text" class="form-control">
+    <label for="genre">Whats your genre</label>
+    <input name="genre" type="text" class="form-control">
+    <label for="showtime">When are you playing</label>
+    <input name="showtime" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn-primary btn-large">Add your band</button>
+</form>

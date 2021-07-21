@@ -1,0 +1,14 @@
+<h1 class="display-3"> Welcome to <%= @stage.name %>, the coolest stage. </h1>
+
+<h3 class="display-4">We have a capacity of <%= @stage.capacity %>.</h3>
+<% if @artists.any? %>
+  <ul>
+    <% @artists.each do |artist| %>
+      <li><a href="./stage/<%= @stage.id %>/<%= artist.id %>"> <%= artist.name %></a></li>
+    <% end %> 
+  </ul>
+<% else %>
+  <p>No bands yet</p>
+<% end %>
+<a href="/stage/<%= @stage.id %>/add_artist">Click here to add your band</a>
+<a href="/">Go back to main</a>

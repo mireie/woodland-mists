@@ -1,0 +1,19 @@
+body {
+  background-color: #00b6e4;
+  background-image: url('../img/mb.png');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position-y: bottom;
+  min-height: 100vh;
+}
+.container {
+  background-color: rgba(255,255,255,.85);
+  margin-top:1rem;
+  padding:1rem;
+}
+
+button a, button a:hover {
+  color:white;
+  text-decoration: none;
+}
+
