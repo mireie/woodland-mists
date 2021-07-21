@@ -11,4 +11,13 @@ describe ("#artist") do
       expect(Artist.all).to(eq([artist1]))
     end
   end
+
+  describe (".clear") do
+    it("clears the Artist class values") do
+      artist1 = Artist.new(nil, "Manilow and the Berries", "Wizard Funktronic", nil, "6 AM")
+      artist1.save
+      Artist.clear
+      expect(Artist.all).to(eq([]))
+    end
+  end
 end
