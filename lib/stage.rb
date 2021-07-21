@@ -31,7 +31,12 @@ class Stage
     @@stages[id]
   end
 
-  def update(id, name, location, capacity)
+  def update(name, location, capacity)
+    @name = name
+    @location = location
+    @capacity = capacity
+
+  end
   
   def delete
     @@stages.delete(self.id)
